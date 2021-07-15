@@ -1,6 +1,7 @@
 <template>
-      <div Main class="container">
-            <Album v-for="(album, index) in library"
+      <div  class="container ">
+            <Album class="col-personal album-item"
+            v-for="(album, index) in library"
             :key="index"
             :album="album"/>
 
@@ -30,5 +31,7 @@ export default {
 
 
 <style lang="scss" scoped>
+@import "./style/_color.scss";
+
 
 </style>

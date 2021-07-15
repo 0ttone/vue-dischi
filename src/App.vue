@@ -1,7 +1,7 @@
 <template>
   <div id="app">
         <Header/>
-        <Main :library="libray"/>
+        <Main :library="library"/>
   </div>
 </template>
 
@@ -16,17 +16,17 @@ export default {
   name: 'App',
   components: {
         Header,
-        Main
+        Main,
     
   },
-data() {
+data: function() {
             return {
       library:[]
                   
             }
       },
 
-created (){
+created() {
         axios.get('https://flynn.boolean.careers/exercises/api/array/music').then((result) => {
               this.library= result.data.response
         })
@@ -35,12 +35,10 @@ created (){
 </script>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+@import "./style/app.scss";
+#app{
+      background-color: $bg-primary-color;
 }
+
+
 </style>
